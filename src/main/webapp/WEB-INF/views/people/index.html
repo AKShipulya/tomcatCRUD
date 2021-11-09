@@ -7,10 +7,15 @@
     <body>
         <h1>List of peoples:</h1>
         <div th:each="person : ${people}">
-            <a th:href="@{/people/{id}(id=${person.getId()})}" th:text="${person.getName()}">user</a>
+            <a th:href="@{/people/{id}(id=${person.getId()})}"
+               th:text="${person.getName()}">user</a>
         </div>
         <br/>
         <hr/>
-        <a href="/people/new">Create new Person</a>
+
+        <form action="/people/new">
+            <input type="submit" value="Create new person">
+        </form>
+
     </body>
 </html>

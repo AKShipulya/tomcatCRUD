@@ -11,9 +11,19 @@
             <lable for="name">Enter name: </lable>
             <input type="text" th:field="*{name}" id="name"/>
             <br/>
+            <lable for="age">Enter age: </lable>
+            <input type="text" th:field="*{age}" id="age"/>
+            <br/>
+            <lable for="email">Enter E-mail: </lable>
+            <input type="text" th:field="*{email}" id="email"/>
+            <br/>
+            <hr>
             <input type="submit" value="Edit!"/>
             <br/>
-            <a th:href="@{/people/{id}(id=${person.getId()})}">Back</a>
+        </form>
+
+        <form th:action="@{/people/{id}(id=${person.getId()})}">
+            <input type="submit" value="Back"/>
         </form>
 
     </body>
