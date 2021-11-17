@@ -15,9 +15,6 @@ import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 
 @Configuration
 @ComponentScan("ru.akshipulya.springcourse")
@@ -57,29 +54,29 @@ public class SpringConfig implements WebMvcConfigurer {
 
     /**
      * Все это из DAO заменяется кодом ниже благодаря JDBC Template Spring
-     *
-     *
-     *     private static final String URL = "jdbc:postgresql://localhost:5432/spring_lessons_db";
-     *     private static final String USERNAME = "postgres";
-     *     private static final String PASSWORD = "RootAdmin";
-     *
-     *     private static Connection connection;
-     *
-     *       //инициализация соединения с БД в статическом блоке инициализации
-     *
-     *     static {
-     *         try {
-     *             Class.forName("org.postgresql.Driver"); //подгрузка класса драйвер при помощи рефлексии
-     *         } catch (ClassNotFoundException e) {
-     *             e.printStackTrace();
-     *         }
-     *
-     *         try {
-     *             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-     *         } catch (SQLException e) {
-     *             e.printStackTrace();
-     *         }
-     *     }
+     * <p>
+     * <p>
+     * private static final String URL = "jdbc:postgresql://localhost:5432/spring_lessons_db";
+     * private static final String USERNAME = "postgres";
+     * private static final String PASSWORD = "RootAdmin";
+     * <p>
+     * private static Connection connection;
+     * <p>
+     * //инициализация соединения с БД в статическом блоке инициализации
+     * <p>
+     * static {
+     * try {
+     * Class.forName("org.postgresql.Driver"); //подгрузка класса драйвер при помощи рефлексии
+     * } catch (ClassNotFoundException e) {
+     * e.printStackTrace();
+     * }
+     * <p>
+     * try {
+     * connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+     * } catch (SQLException e) {
+     * e.printStackTrace();
+     * }
+     * }
      */
 
     @Bean

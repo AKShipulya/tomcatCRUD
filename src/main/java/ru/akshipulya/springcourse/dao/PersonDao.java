@@ -30,8 +30,8 @@ public class PersonDao {
         return jdbcTemplate.query(
                 "SELECT * FROM person WHERE id=?", new Object[]{id}, new BeanPropertyRowMapper<>(Person.class))
                 .stream().findAny().orElse(null); // если будет найден объект с данным id -он будет возвращен,
-                                                        // в противном случае будет возвращать null
-                                                        // правильнее возвращать кастомный объект с ошибкой "not found"
+        // в противном случае будет возвращать null
+        // правильнее возвращать кастомный объект с ошибкой "not found"
     }
 
     public void save(Person person) {
@@ -39,7 +39,7 @@ public class PersonDao {
                 person.getName(),
                 person.getAge(),
                 person.getEmail()
-                );
+        );
     }
 
     public void update(int id, Person updatedPerson) {
@@ -48,7 +48,7 @@ public class PersonDao {
                 updatedPerson.getAge(),
                 updatedPerson.getEmail(),
                 id
-                );
+        );
     }
 
     public void delete(int id) {
